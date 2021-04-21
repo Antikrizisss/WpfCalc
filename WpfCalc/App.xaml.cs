@@ -24,7 +24,7 @@ namespace WpfCalc
                     break;
                 }
             }
-            MessageBox.Show("Привет, это мой первый калькулятор WPF");
+            MessageBox.Show("Привет, это мой первый калькулятор WPF", "Калькулятор");
         }
 
         private void Application_Exit(object sender, ExitEventArgs e)

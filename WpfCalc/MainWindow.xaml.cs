@@ -25,8 +25,8 @@ namespace WpfCalc
             InitializeComponent();
             this.Closed += MainWindow_Closed;
             this.Closing += MainWindow_Closing;
+            
         }
-
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             string msg = "Вы действительно хотите выйти?";
@@ -36,20 +36,22 @@ namespace WpfCalc
                 e.Cancel = true;
             }
         }
-
         private void MainWindow_Closed(object sender, EventArgs e)
         {
-            MessageBox.Show("Пока!");
+            MessageBox.Show("Пока!", "Калькулятор");
         }
-
-        private void One_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Щелчок!");
-        }
-
         private void Window_MouseMove(object sender, MouseEventArgs e)
         {
             //this.Title = e.GetPosition(this).ToString();
+        }
+        private void Equals_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Действие выполнено", "Калькулятор");
+        }
+        private void TextBox_TextChanged(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            //MessageBox.Show(textBox.Text);
         }
     }
 }

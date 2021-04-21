@@ -23,22 +23,27 @@
             </TransformGroup>
         </Grid.RenderTransform>
         <Canvas Grid.ColumnSpan="2" Margin="34,194,36,16">
-            <Button x:Name="One" Content="1" Height="40" Width="40" Canvas.Left="20" Canvas.Top="25" FontSize="28"/>
-            <Button x:Name="Four" Content="4" Height="40" Width="40" Canvas.Left="20" Canvas.Top="89" FontSize="28"/>
-            <Button x:Name="Seven" Content="7" Height="40" Width="40" Canvas.Left="20" Canvas.Top="158" FontSize="28"/>
-            <Button x:Name="Two" Content="2" Height="40" Width="40" Canvas.Left="87" Canvas.Top="25" FontSize="28"/>
-            <Button x:Name="Three" Content="3" Height="40" Width="40" Canvas.Left="147" Canvas.Top="25" FontSize="28"/>
-            <Button x:Name="Division" Content="/" Height="40" Width="40" Canvas.Left="327" Canvas.Top="89" FontSize="28"/>
-            <Button x:Name="Plus" Content="+" Height="40" Width="40" Canvas.Left="275" Canvas.Top="25" FontSize="28"/>
-            <Button x:Name="Five" Content="5" Height="40" Width="40" Canvas.Left="87" Canvas.Top="89" FontSize="28"/>
-            <Button x:Name="Six" Content="6" Height="40" Width="40" Canvas.Left="148" Canvas.Top="89" FontSize="28"/>
-            <Button x:Name="Multiply" Content="*" Height="40" Width="40" Canvas.Left="275" Canvas.Top="89" FontSize="28"/>
-            <Button x:Name="Minus" Content="-" Height="40" Width="40" Canvas.Left="327" Canvas.Top="25" FontSize="28"/>
-            <Button x:Name="Eight" Content="8" Height="40" Width="40" Canvas.Left="87" Canvas.Top="158" FontSize="28"/>
-            <Button x:Name="Nine" Content="9" Height="40" Width="40" Canvas.Left="148" Canvas.Top="158" FontSize="28"/>
-            <Button x:Name="Zero" Content="0" Height="127" Width="40" Canvas.Left="210" Canvas.Top="51" FontSize="28"/>
-            <Button x:Name="Equals" Content="=" Height="40" Width="93" Canvas.Left="275" Canvas.Top="158" FontSize="28"/>
+            <Button x:Name="One" Content="1" Height="40" Width="40" Canvas.Left="20" Canvas.Top="25" FontSize="28" Click="One_Click"/>
+            <Button x:Name="Four" Content="4" Height="40" Width="40" Canvas.Left="20" Canvas.Top="89" FontSize="28" Click="Four_Click"/>
+            <Button x:Name="Seven" Content="7" Height="40" Width="40" Canvas.Left="20" Canvas.Top="158" FontSize="28" Click="Seven_Click"/>
+            <Button x:Name="Two" Content="2" Height="40" Width="40" Canvas.Left="87" Canvas.Top="25" FontSize="28" Click="Two_Click"/>
+            <Button x:Name="Three" Content="3" Height="40" Width="40" Canvas.Left="147" Canvas.Top="25" FontSize="28" Click="Three_Click"/>
+            <Button x:Name="Division" Content="/" Height="40" Width="40" Canvas.Left="327" Canvas.Top="89" FontSize="28" Click="Division_Click"/>
+            <Button x:Name="Plus" Content="+" Height="40" Width="40" Canvas.Left="275" Canvas.Top="25" FontSize="28" Click="Plus_Click"/>
+            <Button x:Name="Five" Content="5" Height="40" Width="40" Canvas.Left="87" Canvas.Top="89" FontSize="28" Click="Five_Click"/>
+            <Button x:Name="Six" Content="6" Height="40" Width="40" Canvas.Left="148" Canvas.Top="89" FontSize="28" Click="Six_Click"/>
+            <Button x:Name="Multiply" Content="*" Height="40" Width="40" Canvas.Left="275" Canvas.Top="89" FontSize="28" Click="Multiply_Click"/>
+            <Button x:Name="Minus" Content="-" Height="40" Width="40" Canvas.Left="327" Canvas.Top="25" FontSize="28" Click="Minus_Click"/>
+            <Button x:Name="Eight" Content="8" Height="40" Width="40" Canvas.Left="87" Canvas.Top="158" FontSize="28" Click="Eight_Click"/>
+            <Button x:Name="Nine" Content="9" Height="40" Width="40" Canvas.Left="148" Canvas.Top="158" FontSize="28" Click="Nine_Click"/>
+            <Button x:Name="Zero" Content="0" Height="110" Width="40" Canvas.Left="211" Canvas.Top="89" FontSize="28" Click="Zero_Click"/>
+            <Button x:Name="Equals" Content="=" Height="40" Width="40" Canvas.Left="275" Canvas.Top="158" FontSize="28" IsDefault="True" Click="Equals_Click"/>
+            <Button x:Name="Back" Content="Back" Height="40" Width="40" Canvas.Left="327" Canvas.Top="158" FontSize="16" Click="Back_Click"/>
+            <Button x:Name="Clear" Content="C" Height="40" Width="40" Canvas.Left="211" Canvas.Top="25" FontSize="28" Click="Clear_Click"/>
         </Canvas>
+
+        <TextBox x:Name="CalcDisplay" Text="" TextWrapping="Wrap" IsReadOnly="False" Background="#FFE0F3F3" Margin="56,59,49,239" Grid.ColumnSpan="2" FontSize="42" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextChanged="TextBox_TextChanged" />
+
 
     </Grid>
 </Window>
