@@ -8,7 +8,6 @@ namespace WpfCalc
         {
             CalcDisplay.Text += "1";
         }
-
         private void Two_Click(object sender, RoutedEventArgs e)
         {
             CalcDisplay.Text += "2";

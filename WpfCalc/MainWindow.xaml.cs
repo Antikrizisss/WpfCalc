@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,7 +26,7 @@ namespace WpfCalc
             InitializeComponent();
             this.Closed += MainWindow_Closed;
             this.Closing += MainWindow_Closing;
-            
+
         }
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -46,12 +47,25 @@ namespace WpfCalc
         }
         private void Equals_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Действие выполнено", "Калькулятор");
+            string calcDisplay = CalcDisplay.Text;
+            CalcDisplay.Text = GetValueСalculation(calcDisplay);
+        }
+        private static string GetValueСalculation(string calcDisplay)
+        {
+            Regex regex = new Regex(@"(?<NUM>(\D?\d+))(?<OPER>(\D?))(?<NUM2>(\D?\d+))");
+            double result = 0.0;
+            Match match = regex.Match(calcDisplay);
+            double num = Convert.ToDouble(match.Groups["NUM"].Value);
+            double num2 = Convert.ToDouble(match.Groups["NUM2"].Value);
+            if (match.Groups["OPER"].Value == "+") { result = num + num2; }
+            if (match.Groups["OPER"].Value == "-") { result = num - num2; }
+            if (match.Groups["OPER"].Value == "/") { result = num / num2; }
+            if (match.Groups["OPER"].Value == "*") { result = num * num2; }
+            return result.ToString();
         }
         private void TextBox_TextChanged(object sender, RoutedEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
-            //MessageBox.Show(textBox.Text);
         }
     }
 }
